@@ -7,7 +7,7 @@ dotenv.config(); // Load environment variables from .env file
 const app = express();
 app.use(bodyParser.json());
 
-const apiKey = process.env.OPENAI_API_KEY; // Access the API key from environment variables
+const apiKey = "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"; // Access the API key from environment variables
 const apiUrl = 'https://api.openai.com/v1/chat/completions';
 const accessToken = `Bearer ${apiKey}`;
 
@@ -30,7 +30,7 @@ app.post('/cook_api', async (req, res) => {
 
   // Generate trip itinerary
   const message = `You are a smart ecommerce cart that is used to assist customer in buying ideal products.
-  I want to cook  ${cook} for ${male} adult male, ${female} adult female and ${childcnt} children. specific instructions are ${instruct}My country is ${country}. List all the neccessary items with ideal quanity and ideal price in rupee and also make total bill.`;
+  I want to cook  ${cook} for ${male} adult male, ${female} adult female and ${childcnt} children. specific instructions are ${instruct}. My country is ${country}. List all the neccessary items with ideal quanity and ideal price in rupee and also make total bill.`;
 
   try {
     const body = {
