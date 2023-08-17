@@ -7,7 +7,7 @@ dotenv.config(); // Load environment variables from .env file
 const app = express();
 app.use(bodyParser.json());
 
-const apiKey = "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"; // Access the API key from environment variables
+const apiKey = process.env.OPENAI_API_KEY; // Access the API key from environment variables
 const apiUrl = 'https://api.openai.com/v1/chat/completions';
 const accessToken = `Bearer ${apiKey}`;
 
